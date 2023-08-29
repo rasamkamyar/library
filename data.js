@@ -46,7 +46,7 @@ const BOOKS = [
   },
   {
     id: 6,
-    title: "رومیو و جولیت",
+    title: "رومئو و جولیت",
     author: "ویلیام شکسپیر",
     published_date: 1595,
     language: "english",
@@ -145,6 +145,7 @@ const BOOKS = [
   },
 ];
 
+document.body.style.backgroundColor = `rgb(${80} , ${19} , ${19})`;
 let card = document.querySelector("div");
 let image = document.querySelector(".style");
 
@@ -152,27 +153,19 @@ function render() {
   let template = BOOKS.map((item) => {
     return `<div class ="card">
     
-    id: ${item.id},
-    title: ${item.title},
-    author: ${item.author},
-    published_date: ${item.published_date},
-    language: ${item.language},
-     ${item.genre},
     <img src = "./image/${item.imgSrc}">    
+    <span class = "title-id">${item.id}</span>
+    <h1>${item.title}</h1>
+    <h2>${item.author}</h2>
+    <div class="detail">
+    <span class = "title-date">${item.published_date}</span>
+    <span class = "title-lang">${item.language}</span>
+    <span class = "title-genre">${item.genre}</span>
+    </div>
     </div>`;
   }).join("");
-  // image.setAttribute("src" ,BOOKS.)
+
   card.innerHTML = template;
 }
 
 window.addEventListener("load", render);
-
-// function render() {
-//     if(DATA.length < 8){
-//      let template = DATA.map((todo, index) => {
-//       return `<li><input onclick = "done(${index})" type= "checkbox" class = "style" >
-//       ${index + 1}- ${todo}</li>`;
-//     }).join("");
-//     root.innerHTML = template;
-//     input.value = "";}
-//   }
