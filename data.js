@@ -157,8 +157,8 @@ function render() {
     author: ${item.author},
     published_date: ${item.published_date},
     language: ${item.language},
-    genre: ${item.genre},
-    imgSrc: ${item.imgSrc}.jpg    
+     ${item.genre},
+    <img src = "./image/${item.imgSrc}">    
     </div>`;
   }).join("");
   // image.setAttribute("src" ,BOOKS.)
