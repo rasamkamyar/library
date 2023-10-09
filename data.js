@@ -54,7 +54,7 @@ const BOOKS = [
     imgSrc: "6.jpg",
   },
   {
-    id: 8,
+    id: 7,
     title: "ویس و رامین",
     author: "فخرالدین اسعد گرگانی",
     published_date: 1054,
@@ -63,7 +63,7 @@ const BOOKS = [
     imgSrc: "7.jpg",
   },
   {
-    id: 9,
+    id: 8,
     title: "گلستان",
     author: "سعدی",
     published_date: 1258,
@@ -144,44 +144,3 @@ const BOOKS = [
     imgSrc: "16.jpg",
   },
 ];
-
-document.body.style.backgroundColor = `rgb(${80} , ${19} , ${19})`;
-let card = document.querySelector("div");
-let image = document.querySelector(".style");
-let btn = document.querySelector("button");
-const favBooks = [];
-
-function render() {
-  // const {imgSrc,id,title,author,published_date,language,genre} = BOOKS;
-  let template = BOOKS.map((item) => {
-    return `<div class ="card">
-    <img src = "./image/${item.imgSrc}">    
-    <span class = "title-id">${item.id}</span>
-    <div class = "main-title">
-    <div class="topic">
-    <h1>${item.title}</h1>
-    <h2>${item.author}</h2>
-    </div>
-    <button class="favorite" onclick="addFavBooks()">افزودن به علاقمندی</button>
-    </div>
-    <div class="detail">
-    <span class = "title-date">${item.published_date}</span>
-    <span class = "title-lang">${item.language}</span>
-    <span class = "title-genre">${item.genre}</span>
-    </div>
-    </div>`;
-  });
-
-  card.innerHTML = template.join("");
-  addFavBooks();
-}
-
-function addFavBooks() {
-  let favAdd = BOOKS.filter[item => item === BOOKS.id];
-  // console.log(favAdd);
-  favBooks.push(favAdd);
-  console.log(favBooks);
-}
-// addFavBooks()
-
-window.addEventListener("load", render);
